@@ -45,6 +45,9 @@ Route::prefix('admin')->group(function () {
     Route::post('login', [AdminController::class, 'login'])->name('admin.login.submit');
     Route::post('logout', [AdminController::class, 'logout'])->name('admin.logout');
 
+    // BULK ACTION ADMIN
+    Route::post('admins/bulk-action', [AdminController::class, 'bulkAction'])
+        ->name('admin.bulkAction');
     // ---------- DASHBOARD ----------
     Route::get('/dashboard_5', [AdminController::class, 'dashboard'])->name('admin.dashboard_5');
 
